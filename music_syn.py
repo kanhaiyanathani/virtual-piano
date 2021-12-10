@@ -6,7 +6,13 @@ from pygame.locals import *
 import numpy as np
 import matplotlib.pyplot as plot
 import random
+import os
 sample_rate=10000
+
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using :0.0')
+    os.environ.__setitem__('DISPLAY', ':0.0')
+
 
 #function to play the sound
 
